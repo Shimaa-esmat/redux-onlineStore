@@ -12,10 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Set up Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'  
 
       - name: Install dependencies
         run: npm install
@@ -24,7 +24,7 @@ jobs:
         run: npm test
 
       - name: Upload test results
-        uses: actions/upload-artifact@v3  # Update this to v3
+        uses: actions/upload-artifact@v3
         with:
           name: test-results
           path: test-results/
